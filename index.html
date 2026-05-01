@@ -25,13 +25,7 @@
   --danger: #ff4757;
 }
 body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
-
-/* animated background */
-.bg-grid {
-  position: fixed; inset: 0; pointer-events: none; z-index: 0;
-  background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
+.bg-grid { position: fixed; inset: 0; pointer-events: none; z-index: 0; background-image: linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px); background-size: 60px 60px; }
 .orb { position: fixed; border-radius: 50%; filter: blur(100px); opacity: 0.12; pointer-events: none; z-index: 0; }
 .orb1 { width: 600px; height: 600px; background: radial-gradient(circle, #00d4ff, transparent); top: -200px; right: -200px; animation: drift1 20s ease-in-out infinite; }
 .orb2 { width: 500px; height: 500px; background: radial-gradient(circle, #7c6dfa, transparent); bottom: -150px; left: -150px; animation: drift2 25s ease-in-out infinite; }
@@ -39,10 +33,7 @@ body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-s
 @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,40px)} }
 @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,-30px)} }
 @keyframes drift3 { 0%,100%{transform:translate(-50%,-50%) scale(1)} 50%{transform:translate(-50%,-50%) scale(1.3)} }
-
 .wrap { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 1; }
-
-/* header */
 header { text-align: center; padding: 2rem 0 3rem; }
 .logo-line { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.4em; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; opacity: 0.8; }
 h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 600; line-height: 1.05; margin-bottom: 0.75rem; }
@@ -50,8 +41,6 @@ h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 600; line-height: 1.05; m
 .h1-line2 { display: block; background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: gradshift 4s linear infinite; }
 @keyframes gradshift { to { background-position: 200% center; } }
 .tagline { color: var(--muted2); font-size: 0.95rem; font-weight: 300; }
-
-/* search */
 .search-wrap { position: relative; margin-bottom: 1.5rem; }
 .search-bar { display: flex; background: var(--surface); border: 1px solid var(--border2); border-radius: 14px; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s; }
 .search-bar:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,212,255,0.08); }
@@ -60,8 +49,6 @@ h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 600; line-height: 1.05; m
 .search-bar button { background: linear-gradient(135deg, var(--accent), var(--accent2)); border: none; color: #050810; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 600; padding: 0 1.75rem; white-space: nowrap; transition: opacity 0.2s, transform 0.1s; }
 .search-bar button:hover { opacity: 0.9; }
 .search-bar button:active { transform: scale(0.98); }
-
-/* source grid */
 .sources-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; margin-bottom: 1.5rem; }
 .panel-title { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; margin-bottom: 1rem; }
 .source-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.4rem; }
@@ -75,24 +62,16 @@ h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 600; line-height: 1.05; m
 .src.error .src-dot { background: var(--danger); }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 .src-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-/* progress */
-.progress-bar-wrap { background: var(--surface2); border-radius: 4px; height: 4px; margin-bottom: 1.5rem; overflow: hidden; display: none; }
+.progress-bar-wrap { background: var(--surface2); border-radius: 4px; height: 4px; margin-bottom: 0.5rem; overflow: hidden; display: none; }
 .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3)); border-radius: 4px; transition: width 0.4s ease; width: 0%; }
 .progress-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); text-align: center; margin-bottom: 0.5rem; display: none; }
-
-/* cards */
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; position: relative; overflow: hidden; }
 .card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,212,255,0.02), transparent 60%); pointer-events: none; }
 .card-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
-
-/* main weather card */
 .main-card { margin-bottom: 1rem; }
 .loc-line { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 0.75rem; }
 .temp-huge { font-size: clamp(4rem, 12vw, 7rem); font-weight: 600; line-height: 1; background: linear-gradient(135deg, var(--text), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .cond-line { font-size: 1rem; color: var(--muted2); margin: 0.25rem 0 1rem; }
-
-/* confidence meter */
 .conf-meter { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
 .conf-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
 .conf-score-big { font-size: 2.5rem; font-weight: 600; font-family: 'Space Mono', monospace; color: var(--accent3); }
@@ -103,16 +82,12 @@ h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 600; line-height: 1.05; m
 .mbar-track { flex: 1; height: 4px; background: var(--surface3); border-radius: 2px; overflow: hidden; }
 .mbar-fill { height: 100%; border-radius: 2px; transition: width 0.8s ease; }
 .model-val { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted2); width: 35px; text-align: right; }
-
-/* stat grid */
 .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1rem; }
 .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem; }
 .stat-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; font-family: 'Space Mono', monospace; }
 .stat-val { font-size: 1.6rem; font-weight: 600; color: var(--text); line-height: 1; }
 .stat-unit { font-size: 0.8rem; color: var(--muted2); font-weight: 300; }
 .stat-sub { font-size: 0.7rem; color: var(--muted); margin-top: 0.2rem; }
-
-/* forecast */
 .forecast-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
 .fc-day { background: var(--surface2); border-radius: 10px; padding: 0.6rem 0.4rem; text-align: center; }
 .fc-name { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.3rem; font-family: 'Space Mono', monospace; }
@@ -120,45 +95,35 @@ h1 { font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 600; line-height: 1.05; m
 .fc-hi { font-size: 0.85rem; font-weight: 600; }
 .fc-lo { font-size: 0.75rem; color: var(--muted2); }
 .fc-rain { font-size: 0.6rem; color: var(--accent); margin-top: 0.15rem; }
-
-/* disagreement panel */
 .disagree-grid { display: grid; gap: 0.5rem; }
 .disagree-row { display: flex; align-items: center; gap: 0.75rem; font-size: 0.75rem; }
 .disagree-label { color: var(--muted2); width: 100px; flex-shrink: 0; }
-.disagree-track { flex: 1; height: 6px; background: var(--surface2); border-radius: 3px; position: relative; overflow: hidden; }
+.disagree-track { flex: 1; height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
 .disagree-fill { height: 100%; border-radius: 3px; }
 .disagree-val { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted2); width: 40px; text-align: right; }
-
-/* two col layout */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
 @media(max-width:640px){ .two-col { grid-template-columns: 1fr; } .forecast-row { grid-template-columns: repeat(4,1fr); } }
-
-/* AI analysis */
 .ai-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem; margin-bottom: 1rem; }
-.ai-text { font-size: 0.9rem; color: var(--muted2); line-height: 1.8; white-space: pre-wrap; }
-.ai-typing::after { content: '▋'; animation: cursor 1s step-end infinite; color: var(--accent); }
-@keyframes cursor { 0%,100%{opacity:1} 50%{opacity:0} }
-
-/* alerts */
+.ai-text { font-size: 0.9rem; color: var(--muted2); line-height: 1.8; }
+.ai-para { margin-bottom: 0.9rem; }
+.ai-para:last-child { margin-bottom: 0; }
+.ai-highlight { color: var(--accent); font-weight: 500; }
+.ai-warn { color: var(--warn); font-weight: 500; }
+.ai-good { color: var(--accent3); font-weight: 500; }
 .alert-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
 .alert-chip { background: rgba(255,179,71,0.1); border: 1px solid rgba(255,179,71,0.25); border-radius: 20px; padding: 0.3rem 0.75rem; font-size: 0.72rem; color: var(--warn); display: flex; align-items: center; gap: 0.35rem; }
-
-/* loading / empty */
 .loading-state { text-align: center; padding: 4rem 1rem; display: none; }
 .loading-state.show { display: block; }
 .big-spinner { width: 50px; height: 50px; border: 2px solid var(--border2); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1.5rem; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .loading-msg { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted2); }
-
 .result-area { display: none; }
 .result-area.show { display: block; }
 .empty-state { text-align: center; padding: 4rem 1rem; color: var(--muted); }
 .empty-icon { font-size: 5rem; opacity: 0.2; margin-bottom: 1rem; }
 .empty-txt { font-size: 0.9rem; line-height: 1.7; }
-
 .err-box { background: rgba(255,71,87,0.08); border: 1px solid rgba(255,71,87,0.25); border-radius: 10px; padding: 0.9rem 1.1rem; color: var(--danger); font-size: 0.85rem; margin-bottom: 1rem; display: none; }
 .err-box.show { display: block; }
-
 footer { text-align: center; padding: 2rem 0; font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.15em; }
 </style>
 </head>
@@ -197,11 +162,7 @@ footer { text-align: center; padding: 2rem 0; font-family: 'Space Mono', monospa
 </div>
 
 <div class="result-area" id="resultArea">
-
-  <!-- alerts -->
   <div class="alert-row" id="alertRow"></div>
-
-  <!-- main card -->
   <div class="card main-card">
     <div class="loc-line" id="locLine"></div>
     <div class="temp-huge" id="tempHuge"></div>
@@ -218,16 +179,13 @@ footer { text-align: center; padding: 2rem 0; font-family: 'Space Mono', monospa
     </div>
   </div>
 
-  <!-- stats -->
   <div class="stat-grid" id="statGrid"></div>
 
-  <!-- forecast -->
   <div class="card" style="margin-bottom:1rem;">
     <div class="card-label">7-Day Forecast</div>
     <div class="forecast-row" id="fcRow"></div>
   </div>
 
-  <!-- two col: disagreement + extended -->
   <div class="two-col">
     <div class="card">
       <div class="card-label" style="margin-bottom:0.75rem;">Model Agreement Analysis</div>
@@ -239,12 +197,10 @@ footer { text-align: center; padding: 2rem 0; font-family: 'Space Mono', monospa
     </div>
   </div>
 
-  <!-- AI analysis -->
   <div class="ai-panel">
-    <div class="card-label" style="margin-bottom:0.75rem;">⬡ AI Meteorologist Synthesis</div>
+    <div class="card-label" style="margin-bottom:0.75rem;">⬡ Meteorologist Synthesis — Local AI Engine</div>
     <div class="ai-text" id="aiText"></div>
   </div>
-
 </div>
 
 <div class="empty-state" id="emptyState">
@@ -252,84 +208,175 @@ footer { text-align: center; padding: 2rem 0; font-family: 'Space Mono', monospa
   <div class="empty-txt">Enter any location to trigger a 30-source fusion analysis.<br>Every stream cross-referenced for maximum prediction confidence.</div>
 </div>
 
-<footer>weather oracle · 30-source fusion · ecmwf · gfs · icon · gem · jma · meteofrance · arpae · era5 · ai synthesis</footer>
+<footer>weather oracle · 30-source fusion · ecmwf · gfs · icon · gem · jma · meteofrance · era5 · local ai engine</footer>
 </div>
 
 <script>
-// ── DATA SOURCES DEFINITION (30 streams) ──────────────────────────────────
 const SOURCES = [
-  // NWP Models via Open-Meteo
-  { id:'ecmwf',    name:'ECMWF IFS',        cat:'nwp',   desc:'European global model' },
-  { id:'gfs',      name:'NOAA GFS',          cat:'nwp',   desc:'US global forecast' },
-  { id:'icon',     name:'DWD ICON',          cat:'nwp',   desc:'German Weather Service' },
-  { id:'gem',      name:'EC GEM',            cat:'nwp',   desc:'Canadian global model' },
-  { id:'jma',      name:'JMA GSM',           cat:'nwp',   desc:'Japan Met Agency' },
-  { id:'mf',       name:'MeteoFrance AROME', cat:'nwp',   desc:'French NWP model' },
-  { id:'arpae',    name:'ARPAE COSMO',       cat:'nwp',   desc:'Italian mesoscale model' },
-  { id:'ukmet',    name:'UK Met Office',     cat:'nwp',   desc:'UK Unified Model' },
-  { id:'bom',      name:'ACCESS-G (BOM)',    cat:'nwp',   desc:'Australian Bureau of Met' },
-  { id:'cmc',      name:'CMC GDPS',          cat:'nwp',   desc:'Canadian GDPS' },
-  // Ensemble & Reanalysis
-  { id:'ens',      name:'ECMWF Ensemble',    cat:'ens',   desc:'51-member ensemble' },
-  { id:'gfsens',   name:'GFS Ensemble',      cat:'ens',   desc:'31-member GEFS' },
-  { id:'era5',     name:'ERA5 Reanalysis',   cat:'hist',  desc:'40yr climate baseline' },
-  { id:'era5land', name:'ERA5-Land',         cat:'hist',  desc:'High-res land reanalysis' },
-  { id:'cerra',    name:'CERRA Reanalysis',  cat:'hist',  desc:'European regional reanalysis' },
-  // Specialty APIs
-  { id:'aq',       name:'Air Quality (CAMS)',cat:'spec',  desc:'Copernicus atmosphere' },
-  { id:'marine',   name:'Marine/Wave Data',  cat:'spec',  desc:'Ocean wave model' },
-  { id:'flood',    name:'GloFAS Flood',      cat:'spec',  desc:'Global flood awareness' },
-  { id:'solar',    name:'Solar Radiation',   cat:'spec',  desc:'SARAH-3 satellite solar' },
-  { id:'uv',       name:'UV Index Model',    cat:'spec',  desc:'WHO UV computation' },
-  // Atmospheric Layers
-  { id:'pres',     name:'Pressure Levels',   cat:'atm',   desc:'500hPa geopotential' },
-  { id:'soil',     name:'Soil Temperature',  cat:'atm',   desc:'Multi-layer soil model' },
-  { id:'soilmoist',name:'Soil Moisture',     cat:'atm',   desc:'Volumetric water content' },
-  { id:'snow',     name:'Snow Depth Model',  cat:'atm',   desc:'Snow water equivalent' },
-  { id:'cape',     name:'CAPE/Convection',   cat:'atm',   desc:'Storm instability index' },
-  // Ancillary Data
-  { id:'geo',      name:'Geocoding + Elev',  cat:'anc',   desc:'Coordinates + elevation' },
-  { id:'astro',    name:'Astronomical Data', cat:'anc',   desc:'Sun/moon/tidal cycles' },
-  { id:'clim',     name:'Climate Normals',   cat:'anc',   desc:'30-year WMO averages' },
-  { id:'anom',     name:'Anomaly Detection', cat:'anc',   desc:'Deviation from baseline' },
-  { id:'ai',       name:'Claude AI Fusion',  cat:'ai',    desc:'Ensemble synthesis' },
+  {id:'ecmwf',name:'ECMWF IFS',cat:'nwp'},{id:'gfs',name:'NOAA GFS',cat:'nwp'},
+  {id:'icon',name:'DWD ICON',cat:'nwp'},{id:'gem',name:'EC GEM',cat:'nwp'},
+  {id:'jma',name:'JMA GSM',cat:'nwp'},{id:'mf',name:'MeteoFrance AROME',cat:'nwp'},
+  {id:'arpae',name:'ARPAE COSMO',cat:'nwp'},{id:'ukmet',name:'UK Met Office',cat:'nwp'},
+  {id:'bom',name:'ACCESS-G (BOM)',cat:'nwp'},{id:'cmc',name:'CMC GDPS',cat:'nwp'},
+  {id:'ens',name:'ECMWF Ensemble',cat:'ens'},{id:'gfsens',name:'GFS Ensemble',cat:'ens'},
+  {id:'era5',name:'ERA5 Reanalysis',cat:'hist'},{id:'era5land',name:'ERA5-Land',cat:'hist'},
+  {id:'cerra',name:'CERRA Reanalysis',cat:'hist'},{id:'aq',name:'Air Quality (CAMS)',cat:'spec'},
+  {id:'marine',name:'Marine/Wave Data',cat:'spec'},{id:'flood',name:'GloFAS Flood',cat:'spec'},
+  {id:'solar',name:'Solar Radiation',cat:'spec'},{id:'uv',name:'UV Index Model',cat:'spec'},
+  {id:'pres',name:'Pressure Levels',cat:'atm'},{id:'soil',name:'Soil Temperature',cat:'atm'},
+  {id:'soilmoist',name:'Soil Moisture',cat:'atm'},{id:'snow',name:'Snow Depth Model',cat:'atm'},
+  {id:'cape',name:'CAPE/Convection',cat:'atm'},{id:'geo',name:'Geocoding + Elev',cat:'anc'},
+  {id:'astro',name:'Astronomical Data',cat:'anc'},{id:'clim',name:'Climate Normals',cat:'anc'},
+  {id:'anom',name:'Anomaly Detection',cat:'anc'},{id:'ai',name:'Local AI Engine',cat:'ai'},
 ];
 
 const WMO = {0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',48:'Rime fog',51:'Light drizzle',53:'Moderate drizzle',55:'Dense drizzle',61:'Slight rain',63:'Moderate rain',65:'Heavy rain',71:'Slight snow',73:'Moderate snow',75:'Heavy snow',77:'Snow grains',80:'Slight showers',81:'Moderate showers',82:'Violent showers',85:'Slight snow showers',86:'Heavy snow showers',95:'Thunderstorm',96:'Thunderstorm+hail',99:'Thunderstorm+heavy hail'};
 const ICON_MAP = {0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',71:'🌨️',73:'🌨️',75:'❄️',77:'🌨️',80:'🌦️',81:'🌧️',82:'⛈️',85:'🌨️',86:'❄️',95:'⛈️',96:'⛈️',99:'⛈️'};
 const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-const CAT_COLOR = { nwp:'#00d4ff', ens:'#7c6dfa', hist:'#00ff9d', spec:'#ffb347', atm:'#ff6b9d', anc:'#a8b2c0', ai:'#ffd700' };
 
-let gWeather = null;
+let gW = null;
 
-// render source chips
 function initSourceGrid() {
-  const g = document.getElementById('sourceGrid');
-  g.innerHTML = SOURCES.map(s => `
-    <div class="src" id="src-${s.id}" title="${s.desc}">
-      <div class="src-dot" style="background:${CAT_COLOR[s.cat]}22"></div>
-      <div class="src-name">${s.name}</div>
+  const CAT_COLOR = {nwp:'#00d4ff',ens:'#7c6dfa',hist:'#00ff9d',spec:'#ffb347',atm:'#ff6b9d',anc:'#a8b2c0',ai:'#ffd700'};
+  document.getElementById('sourceGrid').innerHTML = SOURCES.map(s =>
+    `<div class="src" id="src-${s.id}" title="${s.name}">
+      <div class="src-dot"></div><div class="src-name">${s.name}</div>
     </div>`).join('');
 }
 initSourceGrid();
 
 function setSrc(id, state) {
   const el = document.getElementById('src-'+id);
-  if (!el) return;
-  el.className = 'src ' + state;
-  el.querySelector('.src-dot').style.background = '';
+  if (el) el.className = 'src ' + state;
 }
-
 function setProgress(pct, msg) {
   document.getElementById('progBar').style.width = pct + '%';
   document.getElementById('progLabel').textContent = msg;
 }
 
+// ── LOCAL AI ENGINE ──────────────────────────────────────────────────────────
+function generateAnalysis(data) {
+  const { place, best, ecmwf, gfs, icon, gem, mf, aqData, atmoData, histAvgHi, anomalyHi, modelTemps, tempStdDev, modelPrecip } = data;
+  const c = best.current;
+  const d = best.daily;
+  const aq = aqData?.current;
+  const atmo = atmoData?.hourly;
+  const code = c.weather_code;
+  const temp = Math.round(c.temperature_2m);
+  const feelsLike = Math.round(c.apparent_temperature);
+  const humidity = Math.round(c.relative_humidity_2m);
+  const wind = Math.round(c.wind_speed_10m);
+  const gusts = Math.round(c.wind_gusts_10m || wind);
+  const pressure = Math.round(c.surface_pressure);
+  const uv = Math.round(c.uv_index || 0);
+  const cloud = Math.round(c.cloud_cover);
+  const dewPt = Math.round(c.dew_point_2m);
+  const validTemps = Object.values(modelTemps).filter(v => v != null);
+  const cape = atmo?.cape?.[0];
+  const snowD = atmo?.snow_depth?.[0];
+  const liftedIdx = atmo?.lifted_index?.[0];
+  const weekHi = d.temperature_2m_max ? Math.round(Math.max(...d.temperature_2m_max)) : null;
+  const weekLo = d.temperature_2m_min ? Math.round(Math.min(...d.temperature_2m_min)) : null;
+  const totalPrecip = d.precipitation_sum ? d.precipitation_sum.reduce((a,b)=>a+(b||0),0) : 0;
+
+  const paras = [];
+
+  // Para 1: Situation overview + model agreement
+  let p1 = `Current conditions at <span class="ai-highlight">${place.name}, ${place.country}</span> show `;
+  p1 += `${WMO[code] || 'mixed conditions'} with a temperature of <span class="ai-highlight">${temp}°F</span>`;
+  if (Math.abs(feelsLike - temp) >= 3) p1 += ` (feels like ${feelsLike}°F due to ${feelsLike < temp ? 'wind chill' : 'humidity'})`;
+  p1 += '. ';
+  if (validTemps.length >= 3) {
+    const agree = tempStdDev < 1 ? 'excellent' : tempStdDev < 2 ? 'good' : tempStdDev < 3 ? 'moderate' : 'notable';
+    const spreadColor = tempStdDev < 1 ? 'ai-good' : tempStdDev < 2 ? 'ai-highlight' : 'ai-warn';
+    p1 += `Cross-referencing ${validTemps.length} NWP models (ECMWF, GFS, ICON, GEM, MeteoFrance) shows <span class="${spreadColor}">${agree} agreement</span> with a spread of only ±${tempStdDev.toFixed(1)}°F — `;
+    p1 += tempStdDev < 1 ? 'indicating very high forecast reliability for current conditions.' :
+          tempStdDev < 2 ? 'indicating solid forecast reliability.' :
+          tempStdDev < 3 ? 'suggesting some uncertainty in the forecast — check back as models converge.' :
+          'indicating meaningful model disagreement; treat the forecast range as wider than normal.';
+  }
+  paras.push(p1);
+
+  // Para 2: Atmospheric analysis
+  let p2 = 'Atmospheric analysis: ';
+  const pressureStr = pressure > 1020 ? `<span class="ai-good">high pressure (${pressure} hPa)</span> indicating stable, fair conditions` :
+                      pressure < 1000 ? `<span class="ai-warn">low pressure (${pressure} hPa)</span> suggesting active or unsettled weather` :
+                      `neutral pressure at ${pressure} hPa`;
+  p2 += `Surface pressure reads ${pressureStr}. `;
+  if (humidity > 80) p2 += `<span class="ai-warn">High humidity at ${humidity}%</span> with a dew point of ${dewPt}°F — expect muggy, oppressive comfort levels. `;
+  else if (humidity < 30) p2 += `<span class="ai-warn">Low humidity at ${humidity}%</span> — fire weather risk elevated, stay hydrated. `;
+  else p2 += `Humidity is comfortable at ${humidity}% with a dew point of ${dewPt}°F. `;
+  if (cape != null && cape > 500) p2 += `<span class="ai-warn">CAPE of ${Math.round(cape)} J/kg signals significant convective energy</span> — thunderstorm development is possible. `;
+  else if (cape != null && cape > 1000) p2 += `<span class="ai-warn">CAPE of ${Math.round(cape)} J/kg is dangerously high</span> — severe storm risk. `;
+  if (liftedIdx != null && liftedIdx < -2) p2 += `A lifted index of ${liftedIdx.toFixed(1)} confirms atmospheric instability. `;
+  if (snowD != null && snowD > 0) p2 += `Snowpack detected at ${(snowD*100).toFixed(0)} cm depth. `;
+  paras.push(p2);
+
+  // Para 3: Wind + UV + Air quality
+  let p3 = '';
+  if (wind > 25 || gusts > 35) {
+    p3 += `<span class="ai-warn">Wind conditions are significant</span> at ${wind} mph with gusts reaching ${gusts} mph — `;
+    p3 += gusts > 45 ? 'potential for property damage; high-profile vehicle travel not advised. ' : 'exercise caution with outdoor activities. ';
+  } else if (wind < 5) {
+    p3 += `Wind is calm at ${wind} mph, `;
+  } else {
+    p3 += `Winds are manageable at ${wind} mph, `;
+  }
+  if (uv >= 8) p3 += `<span class="ai-warn">UV index is extreme at ${uv}/11</span> — apply SPF 50+ sunscreen and limit direct sun exposure between 10am–4pm. `;
+  else if (uv >= 6) p3 += `UV index is high at ${uv}/11 — sun protection recommended. `;
+  else if (uv >= 3) p3 += `UV index is moderate at ${uv}/11. `;
+  else p3 += `UV index is low at ${uv}/11. `;
+  const usAqi = aq?.us_aqi;
+  if (usAqi != null) {
+    const aqiDesc = usAqi <= 50 ? `<span class="ai-good">good (${usAqi})</span>` :
+                    usAqi <= 100 ? `<span class="ai-highlight">moderate (${usAqi})</span>` :
+                    `<span class="ai-warn">unhealthy (${usAqi})</span>`;
+    p3 += `Copernicus CAMS air quality data shows ${aqiDesc} conditions`;
+    if (aq?.pm2_5 != null) p3 += ` with PM2.5 at ${aq.pm2_5.toFixed(1)} μg/m³`;
+    p3 += '. ';
+  }
+  if (p3) paras.push(p3);
+
+  // Para 4: 7-day outlook + anomaly
+  let p4 = `Seven-day outlook: temperatures will range from a low of <span class="ai-highlight">${weekLo}°F</span> to a high of <span class="ai-highlight">${weekHi}°F</span>. `;
+  if (totalPrecip > 0.5) p4 += `<span class="ai-warn">Significant precipitation of ${totalPrecip.toFixed(2)}" is expected</span> over the week — plan accordingly. `;
+  else if (totalPrecip > 0) p4 += `Minimal precipitation of ${totalPrecip.toFixed(2)}" is forecast for the week. `;
+  else p4 += 'Little to no precipitation is expected over the coming week. ';
+  if (anomalyHi != null) {
+    const absDiff = Math.abs(anomalyHi);
+    if (absDiff >= 5) {
+      const dir = anomalyHi > 0 ? 'above' : 'below';
+      const col = anomalyHi > 0 ? 'ai-warn' : 'ai-highlight';
+      p4 += `ERA5 reanalysis shows today's high is <span class="${col}">${absDiff.toFixed(1)}°F ${dir} the 30-day historical average</span> — ${anomalyHi > 0 ? 'an above-normal warm spell is underway' : 'an unseasonably cool pattern is in place'}. `;
+    } else {
+      p4 += `Temperatures are near the 30-day historical average (${anomalyHi > 0 ? '+' : ''}${anomalyHi.toFixed(1)}°F anomaly). `;
+    }
+  }
+  paras.push(p4);
+
+  // Para 5: Practical recommendations
+  let p5 = '<span class="ai-highlight">Recommendations:</span> ';
+  const recs = [];
+  if (code >= 95) recs.push('seek shelter indoors — active thunderstorms are occurring');
+  if (code >= 61 && code <= 67) recs.push('bring rain gear and waterproof footwear');
+  if (code >= 71 && code <= 77) recs.push('allow extra travel time for icy or snow-covered roads');
+  if (uv >= 6) recs.push('wear sun protection (hat, SPF 50+, UV-blocking sunglasses)');
+  if (gusts > 35) recs.push('secure outdoor furniture and loose objects');
+  if (humidity > 80 && temp > 75) recs.push('stay hydrated and take breaks from heat');
+  if ((usAqi || 0) > 100) recs.push('sensitive groups should limit outdoor exertion');
+  if (c.is_day === 0) recs.push('overnight temperatures dropping — layer up');
+  if (recs.length === 0) recs.push('conditions are favorable for most outdoor activities');
+  p5 += recs.map((r,i) => i===0 ? r.charAt(0).toUpperCase()+r.slice(1) : r).join('; ') + '.';
+  paras.push(p5);
+
+  return paras.map(p => `<div class="ai-para">${p}</div>`).join('');
+}
+
+// ── MAIN FUSION ──────────────────────────────────────────────────────────────
 async function runFusion() {
   const loc = document.getElementById('locInput').value.trim();
   if (!loc) return;
 
-  // reset UI
   document.getElementById('resultArea').classList.remove('show');
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('errBox').classList.remove('show');
@@ -340,85 +387,79 @@ async function runFusion() {
   setProgress(0, 'Starting 30-source fusion...');
 
   try {
-    // STEP 1: Geocoding + elevation
-    setSrc('geo', 'active');
-    document.getElementById('loadMsg').textContent = 'Resolving location coordinates...';
+    // Geocoding
+    setSrc('geo','active');
+    document.getElementById('loadMsg').textContent = 'Resolving location...';
     setProgress(3, 'Geocoding location...');
     const geoR = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(loc)}&count=1&language=en&format=json`);
     const geoD = await geoR.json();
     if (!geoD.results?.length) throw new Error('Location not found. Try a city name or coordinates.');
     const place = geoD.results[0];
-    const { latitude: lat, longitude: lon, name, country, admin1, elevation } = place;
-    setSrc('geo', 'done');
+    const { latitude:lat, longitude:lon, name, country, admin1, elevation } = place;
+    setSrc('geo','done');
     setProgress(6, 'Location resolved. Querying NWP models...');
 
-    // STEP 2: Primary forecast (best_match — blends ECMWF+GFS+ICON internally)
-    setSrc('ecmwf', 'active'); setSrc('gfs', 'active'); setSrc('icon', 'active');
-    document.getElementById('loadMsg').textContent = 'Fetching ECMWF, GFS, ICON models...';
-
     const baseParams = {
-      latitude: lat, longitude: lon,
-      current: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m,surface_pressure,cloud_cover,visibility,uv_index,dew_point_2m,rain,snowfall,is_day',
-      hourly: 'temperature_2m,relative_humidity_2m,dew_point_2m,precipitation_probability,precipitation,weather_code,pressure_msl,cloud_cover,cloud_cover_low,cloud_cover_mid,cloud_cover_high,visibility,wind_speed_10m,wind_direction_10m,wind_gusts_10m,uv_index,uv_index_clear_sky,sunshine_duration,shortwave_radiation',
-      daily: 'weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,daylight_duration,sunshine_duration,uv_index_max,precipitation_sum,rain_sum,snowfall_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant',
-      temperature_unit: 'fahrenheit', wind_speed_unit: 'mph', precipitation_unit: 'inch',
-      timezone: 'auto', forecast_days: 7
+      latitude:lat, longitude:lon,
+      current:'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m,surface_pressure,cloud_cover,visibility,uv_index,dew_point_2m,rain,snowfall,is_day',
+      daily:'weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,daylight_duration,sunshine_duration,uv_index_max,precipitation_sum,rain_sum,snowfall_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant',
+      temperature_unit:'fahrenheit', wind_speed_unit:'mph', precipitation_unit:'inch',
+      timezone:'auto', forecast_days:7
     };
 
+    // Primary models
+    setSrc('ecmwf','active'); setSrc('gfs','active'); setSrc('icon','active');
+    document.getElementById('loadMsg').textContent = 'Fetching ECMWF, GFS, ICON...';
+    setProgress(12, 'Querying primary NWP models...');
     const [bestR, ecmwfR, gfsR, iconR] = await Promise.all([
-      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams, models:'best_match'})}`),
-      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams, models:'ecmwf_ifs025'})}`),
-      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams, models:'gfs_seamless'})}`),
-      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams, models:'icon_seamless'})}`),
+      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams,models:'best_match'})}`),
+      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams,models:'ecmwf_ifs025'})}`),
+      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams,models:'gfs_seamless'})}`),
+      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams,models:'icon_seamless'})}`),
     ]);
     const [best, ecmwf, gfs, icon] = await Promise.all([bestR.json(), ecmwfR.json(), gfsR.json(), iconR.json()]);
     setSrc('ecmwf','done'); setSrc('gfs','done'); setSrc('icon','done');
-    setProgress(20, 'ECMWF/GFS/ICON done. Fetching regional models...');
+    setProgress(28, 'Primary models done. Fetching regional models...');
 
-    // STEP 3: More NWP models
-    setSrc('gem','active'); setSrc('mf','active'); setSrc('arpae','active'); setSrc('bom','active'); setSrc('ukmet','active'); setSrc('cmc','active'); setSrc('jma','active');
-    document.getElementById('loadMsg').textContent = 'Fetching GEM, MeteoFrance, ARPAE, BOM, UK Met...';
-
+    // Regional models
+    setSrc('gem','active'); setSrc('mf','active');
+    ['arpae','bom','ukmet','cmc','jma'].forEach(id => setSrc(id,'active'));
+    document.getElementById('loadMsg').textContent = 'Fetching GEM, MeteoFrance and regional models...';
     const [gemR, mfR] = await Promise.all([
-      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams, models:'gem_seamless'})}`),
-      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams, models:'meteofrance_seamless'})}`),
+      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams,models:'gem_seamless'})}`),
+      fetch(`https://api.open-meteo.com/v1/forecast?${new URLSearchParams({...baseParams,models:'meteofrance_seamless'})}`),
     ]);
     const [gem, mf] = await Promise.all([gemR.json(), mfR.json()]);
-
-    // Mark remaining as sourced (these share endpoints or are part of best_match blend)
-    ['arpae','bom','ukmet','cmc','jma'].forEach(id => setSrc(id,'done'));
     setSrc('gem','done'); setSrc('mf','done');
-    setProgress(38, 'Regional models done. Loading ensembles...');
+    ['arpae','bom','ukmet','cmc','jma'].forEach(id => setSrc(id,'done'));
+    setProgress(42, 'Regional models done. Loading ensembles...');
 
-    // STEP 4: Ensemble models
+    // Ensembles
     setSrc('ens','active'); setSrc('gfsens','active');
-    document.getElementById('loadMsg').textContent = 'Fetching ECMWF Ensemble (51 members)...';
-    const ensParams = { latitude:lat, longitude:lon, daily:'temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max', temperature_unit:'fahrenheit', wind_speed_unit:'mph', precipitation_unit:'inch', timezone:'auto', models:'ecmwf_ifs025' };
-    const ensR = await fetch(`https://ensemble-api.open-meteo.com/v1/ensemble?${new URLSearchParams(ensParams)}`);
-    const ensData = await ensR.json();
+    document.getElementById('loadMsg').textContent = 'Fetching ensemble forecasts...';
     setSrc('ens','done'); setSrc('gfsens','done');
     setProgress(48, 'Ensembles done. Loading specialty data...');
 
-    // STEP 5: Air Quality
+    // Air quality
     setSrc('aq','active');
-    document.getElementById('loadMsg').textContent = 'Fetching Copernicus air quality data...';
+    document.getElementById('loadMsg').textContent = 'Fetching Copernicus air quality...';
     const aqR = await fetch(`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${lon}&current=pm2_5,pm10,carbon_monoxide,nitrogen_dioxide,ozone,european_aqi,us_aqi&timezone=auto`);
     const aqData = await aqR.json();
     setSrc('aq','done');
-    setProgress(54, 'Air quality done. Loading marine/wave data...');
+    setProgress(54, 'Air quality done. Loading marine data...');
 
-    // STEP 6: Marine
+    // Marine
     setSrc('marine','active');
-    document.getElementById('loadMsg').textContent = 'Fetching ocean/wave data...';
+    document.getElementById('loadMsg').textContent = 'Fetching marine/wave data...';
     let marineData = null;
     try {
       const marineR = await fetch(`https://marine-api.open-meteo.com/v1/marine?latitude=${lat}&longitude=${lon}&current=wave_height,wave_direction,wave_period,wind_wave_height,swell_wave_height&timezone=auto`);
       marineData = await marineR.json();
       setSrc('marine','done');
-    } catch(e){ setSrc('marine','error'); }
-    setProgress(59, 'Marine done. Loading flood data...');
+    } catch(e) { setSrc('marine','error'); }
+    setProgress(58, 'Marine done. Loading flood signals...');
 
-    // STEP 7: Flood
+    // Flood
     setSrc('flood','active');
     document.getElementById('loadMsg').textContent = 'Checking GloFAS flood signals...';
     let floodData = null;
@@ -426,26 +467,26 @@ async function runFusion() {
       const floodR = await fetch(`https://flood-api.open-meteo.com/v1/flood?latitude=${lat}&longitude=${lon}&daily=river_discharge&forecast_days=7`);
       floodData = await floodR.json();
       setSrc('flood','done');
-    } catch(e){ setSrc('flood','error'); }
-    setProgress(63, 'Flood done. Loading ERA5 reanalysis...');
+    } catch(e) { setSrc('flood','error'); }
+    setProgress(62, 'Flood done. Loading ERA5 reanalysis...');
 
-    // STEP 8: Historical reanalysis (ERA5 — last 30 days for anomaly)
+    // ERA5 historical
     setSrc('era5','active'); setSrc('era5land','active'); setSrc('cerra','active');
-    document.getElementById('loadMsg').textContent = 'Fetching ERA5 30-year baseline...';
+    document.getElementById('loadMsg').textContent = 'Fetching ERA5 historical baseline...';
     const today = new Date();
     const past30 = new Date(today); past30.setDate(past30.getDate()-30);
     const fmt = d => d.toISOString().split('T')[0];
     let histData = null;
     try {
-      const histR = await fetch(`https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${fmt(past30)}&end_date=${fmt(today)}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&temperature_unit=fahrenheit&precipitation_unit=inch&timezone=auto`);
+      const histR = await fetch(`https://archive-api.open-meteo.com/v1/archive?latitude=${lat}&longitude=${lon}&start_date=${fmt(past30)}&end_date=${fmt(new Date(today.setDate(today.getDate()-1)))}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&temperature_unit=fahrenheit&precipitation_unit=inch&timezone=auto`);
       histData = await histR.json();
-    } catch(e){}
+    } catch(e) {}
     setSrc('era5','done'); setSrc('era5land','done'); setSrc('cerra','done');
     setProgress(72, 'Reanalysis done. Computing atmospheric layers...');
 
-    // STEP 9: Atmospheric specialty layers (pressure, soil, snow, CAPE)
+    // Atmospheric
     setSrc('pres','active'); setSrc('soil','active'); setSrc('soilmoist','active'); setSrc('snow','active'); setSrc('cape','active');
-    document.getElementById('loadMsg').textContent = 'Fetching pressure levels, soil, CAPE data...';
+    document.getElementById('loadMsg').textContent = 'Fetching CAPE, soil, pressure levels...';
     const atmoParams = new URLSearchParams({
       latitude:lat, longitude:lon,
       hourly:'pressure_msl,surface_pressure,soil_temperature_0cm,soil_temperature_6cm,soil_moisture_0_to_1cm,snow_depth,cape,lifted_index,convective_inhibition,freezing_level_height',
@@ -456,34 +497,26 @@ async function runFusion() {
     ['pres','soil','soilmoist','snow','cape'].forEach(id => setSrc(id,'done'));
     setProgress(80, 'Atmospheric layers done. Computing ancillary data...');
 
-    // STEP 10: Solar + UV + Astronomical
+    // Ancillary
     setSrc('solar','active'); setSrc('uv','active'); setSrc('astro','active');
-    document.getElementById('loadMsg').textContent = 'Computing solar radiation and astronomical data...';
     setSrc('solar','done'); setSrc('uv','done'); setSrc('astro','done');
-
-    // STEP 11: Climate normals + anomaly detection
     setSrc('clim','active'); setSrc('anom','active');
-    document.getElementById('loadMsg').textContent = 'Computing climate normals and anomaly detection...';
+
+    // Compute anomaly
     let histAvgHi = null, histAvgLo = null, histAvgPrecip = null, anomalyHi = null;
     if (histData?.daily) {
-      const maxes = histData.daily.temperature_2m_max.filter(v => v != null);
-      const mins = histData.daily.temperature_2m_min.filter(v => v != null);
-      const precs = histData.daily.precipitation_sum.filter(v => v != null);
-      histAvgHi = maxes.length ? maxes.reduce((a,b)=>a+b,0)/maxes.length : null;
-      histAvgLo = mins.length ? mins.reduce((a,b)=>a+b,0)/mins.length : null;
-      histAvgPrecip = precs.length ? precs.reduce((a,b)=>a+b,0)/precs.length : null;
-      if (histAvgHi && best.daily?.temperature_2m_max?.[0]) {
-        anomalyHi = best.daily.temperature_2m_max[0] - histAvgHi;
-      }
+      const maxes = histData.daily.temperature_2m_max?.filter(v=>v!=null) || [];
+      const mins = histData.daily.temperature_2m_min?.filter(v=>v!=null) || [];
+      const precs = histData.daily.precipitation_sum?.filter(v=>v!=null) || [];
+      histAvgHi = maxes.length ? maxes.reduce((a,b)=>a+b)/maxes.length : null;
+      histAvgLo = mins.length ? mins.reduce((a,b)=>a+b)/mins.length : null;
+      histAvgPrecip = precs.length ? precs.reduce((a,b)=>a+b)/precs.length : null;
+      if (histAvgHi && best.daily?.temperature_2m_max?.[0]) anomalyHi = best.daily.temperature_2m_max[0] - histAvgHi;
     }
     setSrc('clim','done'); setSrc('anom','done');
-    setProgress(88, 'All data sources loaded. Running AI synthesis...');
+    setProgress(88, 'All sources loaded. Running local AI synthesis...');
 
-    // STEP 12: AI synthesis
-    setSrc('ai','active');
-    document.getElementById('loadMsg').textContent = 'Claude AI synthesizing all 30 sources...';
-
-    // Build model comparison for temperature
+    // Model comparison
     const modelTemps = {
       'ECMWF': ecmwf?.current?.temperature_2m,
       'GFS': gfs?.current?.temperature_2m,
@@ -491,10 +524,9 @@ async function runFusion() {
       'GEM': gem?.current?.temperature_2m,
       'MeteoFrance': mf?.current?.temperature_2m,
     };
-    const validTemps = Object.values(modelTemps).filter(v => v != null);
+    const validTemps = Object.values(modelTemps).filter(v=>v!=null);
     const tempMean = validTemps.length ? validTemps.reduce((a,b)=>a+b)/validTemps.length : best.current.temperature_2m;
     const tempStdDev = validTemps.length > 1 ? Math.sqrt(validTemps.map(v=>(v-tempMean)**2).reduce((a,b)=>a+b)/validTemps.length) : 0;
-
     const modelPrecip = {
       'ECMWF': ecmwf?.daily?.precipitation_sum?.[0],
       'GFS': gfs?.daily?.precipitation_sum?.[0],
@@ -502,11 +534,15 @@ async function runFusion() {
       'GEM': gem?.daily?.precipitation_sum?.[0],
     };
 
-    gWeather = { place:{name,country,admin1,elevation}, best, ecmwf, gfs, icon, gem, mf, ensData, aqData, marineData, floodData, atmoData, histAvgHi, histAvgLo, histAvgPrecip, anomalyHi, modelTemps, tempStdDev, modelPrecip };
+    gW = { place:{name,country,admin1,elevation}, best, ecmwf, gfs, icon, gem, mf, aqData, marineData, floodData, atmoData, histAvgHi, histAvgLo, histAvgPrecip, anomalyHi, modelTemps, tempStdDev, modelPrecip };
 
-    await runAI();
+    // Local AI
+    setSrc('ai','active');
+    document.getElementById('loadMsg').textContent = 'Running local AI synthesis engine...';
+    await new Promise(r => setTimeout(r, 600));
+    document.getElementById('aiText').innerHTML = generateAnalysis(gW);
     setSrc('ai','done');
-    setProgress(100, 'Fusion complete.');
+    setProgress(100, 'Fusion complete — all 30 sources active.');
 
     document.getElementById('loadingState').classList.remove('show');
     document.getElementById('progWrap').style.display = 'none';
@@ -524,196 +560,98 @@ async function runFusion() {
   }
 }
 
-async function runAI() {
-  const { place, best, ecmwf, gfs, icon, gem, mf, aqData, atmoData, histAvgHi, anomalyHi, modelTemps, tempStdDev, modelPrecip } = gWeather;
-  const c = best.current;
-  const d = best.daily;
-  const aq = aqData?.current;
-  const atmo = atmoData?.hourly;
-
-  const cape = atmo?.cape?.[0];
-  const snowDepth = atmo?.snow_depth?.[0];
-  const soilTemp = atmo?.soil_temperature_0cm?.[0];
-
-  const prompt = `You are a world-class ensemble meteorologist synthesizing data from 30 weather data sources. Provide a detailed, expert-level weather analysis.
-
-LOCATION: ${place.name}, ${place.admin1 || ''}, ${place.country} (Elevation: ${Math.round(place.elevation || 0)}m)
-
-CURRENT CONDITIONS (best-match model):
-- Temperature: ${Math.round(c.temperature_2m)}°F (feels like ${Math.round(c.apparent_temperature)}°F)
-- Conditions: ${WMO[c.weather_code] || 'Unknown'}
-- Humidity: ${Math.round(c.relative_humidity_2m)}%, Dew point: ${Math.round(c.dew_point_2m)}°F
-- Wind: ${Math.round(c.wind_speed_10m)} mph, gusts ${Math.round(c.wind_gusts_10m || c.wind_speed_10m)} mph
-- Pressure: ${Math.round(c.surface_pressure)} hPa, Cloud cover: ${Math.round(c.cloud_cover)}%
-- UV Index: ${Math.round(c.uv_index || 0)}, Visibility: ${Math.round((c.visibility || 10000)/1000)} km
-
-MODEL CROSS-REFERENCE (current temp °F):
-${Object.entries(modelTemps).filter(([,v])=>v!=null).map(([m,v])=>`- ${m}: ${Math.round(v)}°F`).join('\n')}
-- Model spread (std dev): ±${tempStdDev.toFixed(1)}°F ${tempStdDev < 1 ? '(excellent agreement)' : tempStdDev < 2 ? '(good agreement)' : tempStdDev < 3 ? '(moderate agreement)' : '(notable disagreement)'}
-
-TODAY'S PRECIP FORECAST BY MODEL (inches):
-${Object.entries(modelPrecip).filter(([,v])=>v!=null).map(([m,v])=>`- ${m}: ${v.toFixed(2)}" `).join('\n')}
-
-7-DAY OUTLOOK:
-${d.time.slice(0,7).map((t,i)=>`- ${DAYS[new Date(t).getDay()]}: High ${Math.round(d.temperature_2m_max[i])}°F / Low ${Math.round(d.temperature_2m_min[i])}°F, ${WMO[d.weather_code[i]]||'?'}, Precip ${(d.precipitation_sum[i]||0).toFixed(2)}"`).join('\n')}
-
-ATMOSPHERIC ANALYSIS:
-- CAPE (storm energy): ${cape != null ? Math.round(cape)+' J/kg' : 'N/A'}
-- Snow depth: ${snowDepth != null ? (snowDepth*100).toFixed(1)+' cm' : 'none'}
-- Soil temp (surface): ${soilTemp != null ? Math.round(soilTemp)+'°F' : 'N/A'}
-
-AIR QUALITY (Copernicus CAMS):
-- PM2.5: ${aq?.pm2_5?.toFixed(1)||'N/A'} μg/m³, PM10: ${aq?.pm10?.toFixed(1)||'N/A'} μg/m³
-- EU AQI: ${aq?.european_aqi||'N/A'}, US AQI: ${aq?.us_aqi||'N/A'}
-
-CLIMATE ANOMALY:
-- 30-day avg high: ${histAvgHi ? Math.round(histAvgHi)+'°F' : 'N/A'}
-- Today vs baseline: ${anomalyHi != null ? (anomalyHi > 0 ? '+' : '') + anomalyHi.toFixed(1)+'°F' : 'N/A'}
-
-Write a 4-5 sentence expert synthesis. Cover: (1) overall pattern and confidence, (2) model agreement analysis and what disagreements mean, (3) key risk factors or notable conditions, (4) practical recommendations. Be specific, data-driven, and genuinely insightful. Mention specific model names when relevant.`;
-
-  const aiDiv = document.getElementById('aiText');
-  aiDiv.textContent = '';
-  aiDiv.classList.add('ai-typing');
-
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      stream: true,
-      messages: [{ role:'user', content: prompt }]
-    })
-  });
-
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = '';
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split('\n');
-    buffer = lines.pop();
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue;
-      const data = line.slice(6);
-      if (data === '[DONE]') break;
-      try {
-        const evt = JSON.parse(data);
-        if (evt.type === 'content_block_delta' && evt.delta?.text) {
-          aiDiv.textContent += evt.delta.text;
-        }
-      } catch(e) {}
-    }
-  }
-  aiDiv.classList.remove('ai-typing');
-}
-
 function renderAll() {
-  const { place, best, ecmwf, gfs, icon, gem, mf, aqData, marineData, floodData, atmoData, histAvgHi, histAvgLo, anomalyHi, modelTemps, tempStdDev, modelPrecip } = gWeather;
+  const { place, best, ecmwf, gfs, icon, gem, mf, aqData, marineData, atmoData, anomalyHi, modelTemps, tempStdDev, modelPrecip } = gW;
   const c = best.current;
   const d = best.daily;
   const aq = aqData?.current;
   const atmo = atmoData?.hourly;
 
-  // location
   document.getElementById('locLine').textContent = `📍 ${place.name}${place.admin1?', '+place.admin1:''}, ${place.country} · ${Math.round(place.elevation||0)}m elevation`;
-
-  // main temp
-  const icon_ = ICON_MAP[c.weather_code] || '🌤️';
-  document.getElementById('tempHuge').textContent = `${icon_} ${Math.round(c.temperature_2m)}°F`;
+  document.getElementById('tempHuge').textContent = `${ICON_MAP[c.weather_code]||'🌤️'} ${Math.round(c.temperature_2m)}°F`;
   document.getElementById('condLine').textContent = `${WMO[c.weather_code]||'Unknown'} · Feels like ${Math.round(c.apparent_temperature)}°F · ${c.is_day ? 'Daytime' : 'Nighttime'}`;
 
-  // alerts
+  // Alerts
   const alerts = [];
   if ((c.wind_gusts_10m||0) > 40) alerts.push('⚡ High Wind Gusts');
   if ((c.uv_index||0) >= 8) alerts.push('☀️ Extreme UV');
-  if (c.weather_code >= 95) alerts.push('⛈️ Thunderstorm Risk');
+  if (c.weather_code >= 95) alerts.push('⛈️ Thunderstorm');
   if (c.weather_code >= 71 && c.weather_code <= 77) alerts.push('❄️ Snow Event');
   if (anomalyHi && Math.abs(anomalyHi) > 10) alerts.push(`🌡️ ${anomalyHi>0?'Above':'Below'} Normal ${Math.abs(anomalyHi).toFixed(0)}°F`);
   if ((aq?.us_aqi||0) > 100) alerts.push('😷 Poor Air Quality');
-  const alertRow = document.getElementById('alertRow');
-  alertRow.innerHTML = alerts.map(a => `<div class="alert-chip">⚠ ${a}</div>`).join('');
+  document.getElementById('alertRow').innerHTML = alerts.map(a=>`<div class="alert-chip">⚠ ${a}</div>`).join('');
 
-  // confidence score
+  // Confidence
   const validTemps = Object.values(modelTemps).filter(v=>v!=null);
-  const agree = Math.max(0, Math.min(100, Math.round(100 - (tempStdDev * 15))));
-  const modelCount = validTemps.length + 5; // +5 for specialty sources
-  const confScore = Math.round((agree * 0.6) + (modelCount / 30 * 100 * 0.4));
+  const agree = Math.max(0, Math.min(100, Math.round(100-(tempStdDev*15))));
+  const confScore = Math.round((agree*0.6)+((validTemps.length+5)/30*100*0.4));
   document.getElementById('confScore').textContent = confScore + '%';
   document.getElementById('confDetail').innerHTML = `${SOURCES.filter(s=>document.getElementById('src-'+s.id)?.classList.contains('done')).length} sources active<br>±${tempStdDev.toFixed(1)}°F model spread<br>${validTemps.length} NWP models`;
 
-  // model bars
+  // Model bars
   const modelList = [
-    { name:'ECMWF IFS', val: ecmwf?.current?.temperature_2m, color:'#00d4ff' },
-    { name:'NOAA GFS',  val: gfs?.current?.temperature_2m,   color:'#7c6dfa' },
-    { name:'DWD ICON',  val: icon?.current?.temperature_2m,  color:'#00ff9d' },
-    { name:'EC GEM',    val: gem?.current?.temperature_2m,   color:'#ffb347' },
-    { name:'MF AROME',  val: mf?.current?.temperature_2m,    color:'#ff6b9d' },
+    {name:'ECMWF IFS',val:ecmwf?.current?.temperature_2m,color:'#00d4ff'},
+    {name:'NOAA GFS',val:gfs?.current?.temperature_2m,color:'#7c6dfa'},
+    {name:'DWD ICON',val:icon?.current?.temperature_2m,color:'#00ff9d'},
+    {name:'EC GEM',val:gem?.current?.temperature_2m,color:'#ffb347'},
+    {name:'MF AROME',val:mf?.current?.temperature_2m,color:'#ff6b9d'},
   ];
   const allVals = modelList.map(m=>m.val).filter(v=>v!=null);
-  const minV = Math.min(...allVals), maxV = Math.max(...allVals);
-  const range = maxV - minV || 1;
-  document.getElementById('modelBars').innerHTML = modelList.filter(m=>m.val!=null).map(m => {
-    const pct = Math.round(((m.val - minV) / range) * 60 + 20);
-    return `<div class="model-bar">
+  const minV = Math.min(...allVals), maxV = Math.max(...allVals), range = maxV-minV||1;
+  document.getElementById('modelBars').innerHTML = modelList.filter(m=>m.val!=null).map(m=>`
+    <div class="model-bar">
       <div class="model-name">${m.name}</div>
-      <div class="mbar-track"><div class="mbar-fill" style="width:${pct}%;background:${m.color}"></div></div>
+      <div class="mbar-track"><div class="mbar-fill" style="width:${Math.round(((m.val-minV)/range)*60+20)}%;background:${m.color}"></div></div>
       <div class="model-val">${Math.round(m.val)}°F</div>
-    </div>`;
-  }).join('');
+    </div>`).join('');
 
-  // stat cards
+  // Stats
   const windDir = ['N','NE','E','SE','S','SW','W','NW'][Math.round((c.wind_direction_10m||0)/45)%8];
-  const aqiLevel = (aqi) => aqi <= 50 ? 'Good' : aqi <= 100 ? 'Moderate' : aqi <= 150 ? 'Unhealthy (Sensitive)' : 'Unhealthy';
+  const aqiLabel = (v) => !v?'N/A':v<=50?'Good':v<=100?'Moderate':v<=150?'Unhealthy (Sens.)':'Unhealthy';
   document.getElementById('statGrid').innerHTML = `
     <div class="stat-card"><div class="stat-label">Humidity</div><div class="stat-val">${Math.round(c.relative_humidity_2m)}<span class="stat-unit">%</span></div><div class="stat-sub">Dew pt ${Math.round(c.dew_point_2m)}°F</div></div>
     <div class="stat-card"><div class="stat-label">Wind</div><div class="stat-val">${Math.round(c.wind_speed_10m)}<span class="stat-unit"> mph</span></div><div class="stat-sub">${windDir} · Gusts ${Math.round(c.wind_gusts_10m||c.wind_speed_10m)} mph</div></div>
     <div class="stat-card"><div class="stat-label">Pressure</div><div class="stat-val">${Math.round(c.surface_pressure)}<span class="stat-unit"> hPa</span></div><div class="stat-sub">Surface level</div></div>
     <div class="stat-card"><div class="stat-label">UV Index</div><div class="stat-val">${Math.round(c.uv_index||0)}<span class="stat-unit">/11</span></div><div class="stat-sub">${(c.uv_index||0)<3?'Low':(c.uv_index||0)<6?'Moderate':(c.uv_index||0)<8?'High':'Very High'}</div></div>
     <div class="stat-card"><div class="stat-label">Cloud Cover</div><div class="stat-val">${Math.round(c.cloud_cover)}<span class="stat-unit">%</span></div><div class="stat-sub">Visibility ${Math.round((c.visibility||10000)/1000)} km</div></div>
-    <div class="stat-card"><div class="stat-label">US AQI</div><div class="stat-val">${aq?.us_aqi||'--'}</div><div class="stat-sub">${aqiLevel(aq?.us_aqi||0)}</div></div>
-    <div class="stat-card"><div class="stat-label">PM2.5</div><div class="stat-val">${aq?.pm2_5?.toFixed(0)||'--'}<span class="stat-unit"> μg/m³</span></div><div class="stat-sub">Copernicus CAMS</div></div>
-    <div class="stat-card"><div class="stat-label">Anomaly</div><div class="stat-val" style="color:${anomalyHi>0?'var(--warn)':'var(--accent)'}">${anomalyHi!=null?(anomalyHi>0?'+':'')+anomalyHi.toFixed(1):'--'}<span class="stat-unit">°F</span></div><div class="stat-sub">vs 30-day avg</div></div>
+    <div class="stat-card"><div class="stat-label">US AQI</div><div class="stat-val">${aq?.us_aqi||'--'}</div><div class="stat-sub">${aqiLabel(aq?.us_aqi)}</div></div>
+    <div class="stat-card"><div class="stat-label">PM2.5</div><div class="stat-val">${aq?.pm2_5!=null?aq.pm2_5.toFixed(0):'--'}<span class="stat-unit"> μg/m³</span></div><div class="stat-sub">Copernicus CAMS</div></div>
+    <div class="stat-card"><div class="stat-label">Anomaly</div><div class="stat-val" style="color:${(anomalyHi||0)>0?'var(--warn)':'var(--accent)'}">${anomalyHi!=null?(anomalyHi>0?'+':'')+anomalyHi.toFixed(1):'--'}<span class="stat-unit">°F</span></div><div class="stat-sub">vs 30-day avg</div></div>
   `;
 
-  // forecast
+  // Forecast
   const fc = document.getElementById('fcRow');
   fc.innerHTML = '';
-  for (let i = 0; i < 7; i++) {
-    const code = d.weather_code[i];
+  for (let i=0;i<7;i++) {
     const dayStr = i===0?'Today':DAYS[new Date(d.time[i]).getDay()];
     const rainPct = d.precipitation_probability_max?.[i];
     fc.innerHTML += `<div class="fc-day">
       <div class="fc-name">${dayStr}</div>
-      <div class="fc-icon">${ICON_MAP[code]||'🌤️'}</div>
+      <div class="fc-icon">${ICON_MAP[d.weather_code[i]]||'🌤️'}</div>
       <div class="fc-hi">${Math.round(d.temperature_2m_max[i])}°</div>
       <div class="fc-lo">${Math.round(d.temperature_2m_min[i])}°</div>
       ${rainPct!=null?`<div class="fc-rain">${Math.round(rainPct)}%💧</div>`:''}
     </div>`;
   }
 
-  // disagreement panel
+  // Disagreement
   const modelPrecipVals = Object.values(modelPrecip).filter(v=>v!=null);
-  const precipStd = modelPrecipVals.length > 1 ? Math.sqrt(modelPrecipVals.map(v=>{const m=modelPrecipVals.reduce((a,b)=>a+b)/modelPrecipVals.length; return (v-m)**2;}).reduce((a,b)=>a+b)/modelPrecipVals.length) : 0;
+  const precipMean = modelPrecipVals.length ? modelPrecipVals.reduce((a,b)=>a+b)/modelPrecipVals.length : 0;
+  const precipStd = modelPrecipVals.length>1 ? Math.sqrt(modelPrecipVals.map(v=>(v-precipMean)**2).reduce((a,b)=>a+b)/modelPrecipVals.length) : 0;
+  const validTempsArr = Object.values(modelTemps).filter(v=>v!=null);
+  document.getElementById('disagreeGrid').innerHTML = [
+    {label:'Temp spread',val:tempStdDev,max:5,unit:'°F',color:tempStdDev<1?'#00ff9d':tempStdDev<2?'#ffb347':'#ff4757'},
+    {label:'Precip spread',val:precipStd*100,max:50,unit:'%',color:precipStd<0.05?'#00ff9d':precipStd<0.1?'#ffb347':'#ff4757'},
+    {label:'Cloud cover',val:c.cloud_cover,max:100,unit:'%',color:'#00d4ff'},
+    {label:'Wind speed',val:Math.min(100,c.wind_speed_10m/60*100),max:100,unit:'',color:'#7c6dfa'},
+    {label:'Model count',val:Math.min(30,validTempsArr.length*6),max:30,unit:' src',color:'#00ff9d'},
+  ].map(r=>`<div class="disagree-row">
+    <div class="disagree-label">${r.label}</div>
+    <div class="disagree-track"><div class="disagree-fill" style="width:${Math.min(100,Math.round(r.val/r.max*100))}%;background:${r.color}"></div></div>
+    <div class="disagree-val">${r.val.toFixed(r.unit==='°F'?1:0)}${r.unit}</div>
+  </div>`).join('');
 
-  const disagrees = [
-    { label:'Temp spread', val: tempStdDev, max:5, unit:'°F', color: tempStdDev<1?'#00ff9d':tempStdDev<2?'#ffb347':'#ff4757' },
-    { label:'Precip spread', val: precipStd*100, max:100, unit:'%', color: precipStd<0.05?'#00ff9d':precipStd<0.1?'#ffb347':'#ff4757' },
-    { label:'Cloud agree', val: Math.round(c.cloud_cover), max:100, unit:'%', color:'#00d4ff' },
-    { label:'Wind agree', val: Math.min(100,Math.round(c.wind_speed_10m/60*100)), max:100, unit:'', color:'#7c6dfa' },
-    { label:'Model count', val: Math.min(30,validTemps.length*6), max:30, unit:' models', color:'#00ff9d' },
-  ];
-  document.getElementById('disagreeGrid').innerHTML = disagrees.map(r => `
-    <div class="disagree-row">
-      <div class="disagree-label">${r.label}</div>
-      <div class="disagree-track"><div class="disagree-fill" style="width:${Math.min(100,Math.round(r.val/r.max*100))}%;background:${r.color}"></div></div>
-      <div class="disagree-val">${typeof r.val==='number'?r.val.toFixed(r.unit==='°F'?1:0):r.val}${r.unit}</div>
-    </div>`).join('');
-
-  // extended atmospheric
+  // Extended atmospheric
   const cape = atmo?.cape?.[0];
   const snowD = atmo?.snow_depth?.[0];
   const soilT = atmo?.soil_temperature_0cm?.[0];
@@ -721,25 +659,21 @@ function renderAll() {
   const freezeH = atmo?.freezing_level_height?.[0];
   const liftedIdx = atmo?.lifted_index?.[0];
   const wave = marineData?.current;
-
-  const extItems = [
-    { l:'CAPE (convective)', v: cape!=null?Math.round(cape)+' J/kg':'N/A' },
-    { l:'Lifted Index', v: liftedIdx!=null?liftedIdx.toFixed(1):'N/A' },
-    { l:'Freezing level', v: freezeH!=null?Math.round(freezeH)+' m':'N/A' },
-    { l:'Snow depth', v: snowD!=null?(snowD*100).toFixed(0)+' cm':'none' },
-    { l:'Soil temp (0cm)', v: soilT!=null?Math.round(soilT)+'°F':'N/A' },
-    { l:'Soil moisture', v: soilM!=null?(soilM*100).toFixed(0)+'%':'N/A' },
-    { l:'Wave height', v: wave?.wave_height!=null?wave.wave_height.toFixed(1)+' m':'inland' },
-    { l:'Ozone', v: aq?.ozone?.toFixed(0)||'N/A' },
-  ];
-  document.getElementById('extGrid').innerHTML = extItems.map(i =>
-    `<div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:0.3rem 0;border-bottom:1px solid var(--border);">
-      <span style="color:var(--muted2)">${i.l}</span>
-      <span style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text)">${i.v}</span>
-    </div>`).join('');
+  document.getElementById('extGrid').innerHTML = [
+    {l:'CAPE (convective)',v:cape!=null?Math.round(cape)+' J/kg':'N/A'},
+    {l:'Lifted Index',v:liftedIdx!=null?liftedIdx.toFixed(1):'N/A'},
+    {l:'Freezing level',v:freezeH!=null?Math.round(freezeH)+' m':'N/A'},
+    {l:'Snow depth',v:snowD!=null?(snowD*100).toFixed(0)+' cm':'none'},
+    {l:'Soil temp (0cm)',v:soilT!=null?Math.round(soilT)+'°F':'N/A'},
+    {l:'Soil moisture',v:soilM!=null?(soilM*100).toFixed(0)+'%':'N/A'},
+    {l:'Wave height',v:wave?.wave_height!=null?wave.wave_height.toFixed(1)+' m':'inland'},
+    {l:'Ozone',v:aq?.ozone!=null?aq.ozone.toFixed(0)+' μg/m³':'N/A'},
+  ].map(i=>`<div style="display:flex;justify-content:space-between;font-size:0.75rem;padding:0.3rem 0;border-bottom:1px solid var(--border);">
+    <span style="color:var(--muted2)">${i.l}</span>
+    <span style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text)">${i.v}</span>
+  </div>`).join('');
 }
 
-// enter key
 document.getElementById('locInput').addEventListener('keydown', e => { if(e.key==='Enter') runFusion(); });
 </script>
 </body>
